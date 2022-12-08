@@ -1,0 +1,82 @@
+[
+    {
+        "nombre": "heineken",
+        "precio": "250",
+        "id": "1",
+        "tipo": "No es artesanal",
+        "desc": "Productor: Heineken, Grado de alcohol: 5,3%, Corte: Malt Lager, Contenido neto: 710ml, Presentación: Lata.",
+        "cant": "0",
+        "subtotal": "0"
+    },
+
+    {
+        "nombre": "stellaartois",
+        "precio": "350",
+        "id": "2",
+        "tipo": "No es artesanal",
+        "desc": "Estilo de cerveza:European Pale Lager, Grado de alcohol: 5%, Tipo de envase:Lata Formato de venta: Unidad, Unidades por pack: 1, Volumen de la unidad 269 mL.",
+        "cant": "0",
+        "subtotal": "0"
+    },
+
+    {
+        "nombre": "corona",
+        "precio": "450",
+        "id": "3",
+        "tipo": "Artesanal",
+        "desc": "Estilo de cerveza: American Adjunct Lager,Tipo de envase: Botell, Volumen de la unidad:330 mL, Color:Rubia, Graduación alcohólica: 4.5 %",
+        "cant": "0",
+        "subtotal": "0"
+    },
+
+    {
+        "nombre": "quilmes",
+        "precio": "350",
+        "id": "4",
+        "tipo": "no es artesanal",
+        "desc": "Estilo de cerveza American Adjunct Lager, Tipo de envase:Lata, Volumen de la unidad: 473 mL,Color: Rubia, Graduación alcohólica: 4.9 %",
+        "cant": "0",
+        "subtotal": "0"
+    },
+
+    {
+        "nombre": "patagonia",
+        "precio": "350",
+        "id": "5",
+        "tipo": "Artesanal",
+        "desc": "Estilo de cerveza Bohemian Pilsener, Tipo de envase:Lata, Volumen de la unidad: 473 mL, Color: Rubia, Graduación alcohólica: 5.2 %",
+        "cant": "0",
+        "subtotal": "0"
+    },
+
+    {
+        "nombre": "imperial",
+        "precio": "250",
+        "id": "6",
+        "tipo": "no es artesanal",
+        "desc": "Tipo de envase:Lata, Formato de venta:Unidad, Volumen de la unidad: 710 mL",
+        "cant": "0",
+        "subtotal": "0"
+    },
+
+    {
+        "nombre": "andes",
+        "precio": "350",
+        "id": "7",
+        "tipo": "Artesanal",
+        "desc": "Estilo de cerveza:Golden,Tipo de envase: Lata,Formato de venta: Unidad, Volumen de la unidad:473Graduación alcohólica: 5.1 %",
+        "cant": "0",
+        "subtotal": "0"
+    },
+
+    {
+        "nombre": "brahama",
+        "precio": "150",
+        "id": "8",
+        "tipo": "no es artesanal",
+        "desc": "Estilo de cerveza: American Adjunct Lager, Tipo de envase:Lata, Formato de venta:Unidad, Volumen de la unidad: 473 mL, Graduación alcohólica: 4.8 %",
+        "cant": "0",
+        "subtotal": "0"
+    }
+
+]

@@ -1,0 +1,692 @@
+@import "./_variables.scss";
+@import "./_reset.scss";
+@import "./_header-footer.scss";
+@import "./_nosotros-retiro.scss";
+@import "./_carrito.scss";
+@import "./_catalogo.scss";
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #1B2021;
+  background-color: #fff;
+  display: none;
+}
+
+h1, h2 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+p, h3 {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #1B2021;
+}
+
+a:hover {
+  color: #BA3365;
+}
+
+button {
+  all: revert;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.button {
+  border: 1px #BA3365 solid;
+  border-radius: 0;
+  background: #fff;
+  color: #BA3365;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  -webkit-transition: background-color 0.15s;
+  transition: background-color 0.15s;
+}
+
+.button:hover {
+  background-color: #ffd9da;
+}
+
+.button.button-principal {
+  background: #BA3365;
+  color: #fff;
+}
+
+.button.button-principal:hover {
+  background-color: #52B788;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deshabilitado {
+  display: none;
+}
+
+.no-items {
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  background: rgba(28, 33, 34, 0.9);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+          box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 0.5rem 0;
+  border: 0;
+  z-index: 1;
+}
+
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div a {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.08rem;
+}
+
+header div a:hover {
+  color: #BA3365;
+}
+
+header div .logo {
+  margin: 0;
+}
+
+header div .logo a {
+  font-size: 2rem;
+}
+
+header div #open-nav {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  header div #open-nav {
+    display: block;
+  }
+}
+
+header div .nav .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+header div .nav #close-nav {
+  display: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 900px) {
+  header div .nav #close-nav {
+    display: block;
+  }
+}
+
+header div .nav div {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  header div .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 60%;
+    max-width: 205px;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-transition: left 0.5s;
+    transition: left 0.5s;
+    background: rgba(28, 33, 34, 0.9);
+    -webkit-box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+            box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 0px;
+  }
+  header div .nav.activo {
+    left: 0;
+  }
+  header div .nav .nav-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header div .nav div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    gap: 0.5rem;
+  }
+  header div .nav div .lista-contacto {
+    color: #fff;
+  }
+  header div .nav div .lista-contacto li {
+    font-size: 0.8rem;
+  }
+  header div .nav div .redes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+  }
+  header div .nav div .redes i {
+    font-size: 2rem;
+  }
+}
+
+footer .informacion, footer .copyright, footer .redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .informacion {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+}
+
+footer .informacion .contacto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+footer .informacion .contacto h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+footer .informacion .contacto .logo {
+  display: inline-block;
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding-top: 0.5rem;
+}
+
+footer .informacion .contacto .lista-contacto .item-contacto {
+  margin-bottom: 0.15rem;
+}
+
+@media only screen and (max-width: 900px) {
+  footer .informacion .contacto .lista-contacto {
+    display: none;
+  }
+}
+
+footer .informacion .redes {
+  font-size: 2rem;
+  gap: 1rem;
+}
+
+footer .informacion .redes a:hover {
+  color: #BA3365;
+}
+
+@media only screen and (max-width: 900px) {
+  footer .informacion .redes {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  footer .informacion {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+footer .aclaracion {
+  font-size: 0.85rem;
+  font-weight: 100;
+  color: #30343F;
+}
+
+.nosotros img {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.nosotros .objetivos {
+  list-style-position: inside;
+  list-style-image: url(../media/reciclar.png);
+  padding-left: 2rem;
+}
+
+.nosotros .objetivos .objetivo {
+  margin-bottom: 0.15rem;
+}
+
+.retiro ul {
+  list-style-image: url(../media/camion.png);
+  list-style-position: inside;
+  padding-left: 2rem;
+}
+
+.retiro ul .detalle-retiro {
+  margin-bottom: 0.15rem;
+}
+
+.burbuja {
+  padding: 0.5rem;
+  border-radius: 50px;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.149);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+          box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.burbuja.abrir-carrito {
+  position: fixed;
+  bottom: 1rem;
+  right: 0.4rem;
+  font-size: 2rem;
+}
+
+.burbuja.cerrar-carrito {
+  right: 5%;
+  font-size: 1rem;
+}
+
+.burbuja-cant {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 3rem;
+  right: 0.4rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #BA3365;
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.burbuja-cant #cant-total-productos {
+  margin: auto;
+}
+
+.carrito {
+  max-height: 65vh;
+  width: 65%;
+  max-width: 800px;
+  position: fixed;
+  bottom: 0.75rem;
+  right: 5%;
+  overflow: auto;
+  display: none;
+  background: rgba(255, 255, 255, 0.149);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+          box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.carrito .contenido-modal {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+}
+
+.carrito .contenido-modal .cerrar-carrito {
+  position: fixed;
+}
+
+.carrito .contenido-modal .producto-carrito {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  background-color: #fff;
+  border: 1px solid rgba(48, 52, 64, 0.18);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carrito .contenido-modal .producto-carrito img {
+  width: 100px;
+}
+
+.carrito .contenido-modal .producto-carrito .datos {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 0.5rem;
+}
+
+
+.carrito .contenido-modal .producto-carrito .datos .cantidades, .carrito .contenido-modal .producto-carrito .datos .subtotal-producto, .carrito .contenido-modal .producto-carrito .datos .eliminar {
+  margin: auto;
+}
+
+.carrito .contenido-modal .producto-carrito .datos .cantidades {
+  
+  grid-area: cant;
+}
+
+.carrito .contenido-modal .producto-carrito .datos .subtotal-producto {
+ 
+  grid-area: sub;
+}
+
+.carrito .contenido-modal .producto-carrito .datos .eliminar {
+ 
+  grid-area: eliminar;
+}
+
+@media only screen and (max-width: 600px) {
+  .carrito .contenido-modal .producto-carrito img {
+    display: none;
+  }
+  .carrito .contenido-modal .producto-carrito .datos {
+    gap: 0;
+  }
+}
+
+.carrito .contenido-modal .envio {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.149);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+          box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.carrito .contenido-modal .envio h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+}
+
+.carrito .contenido-modal .detalle {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.149);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+          box-shadow: 0 8px 32px 0 rgba(48, 52, 63, 0.369);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.carrito .contenido-modal .detalle h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+}
+
+.carrito .contenido-modal .detalle #pagar-carrito {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.carrito .contenido-modal .detalle #subtotal-carrito, .carrito .contenido-modal .detalle #total-carrito, .carrito .contenido-modal .detalle #descuento-carrito, .carrito .contenido-modal .detalle #envio-carrito {
+  margin-bottom: 0.15rem;
+}
+
+.carrito .contenido-modal .detalle #total-carrito {
+  font-size: 1.1rem;
+}
+
+.carrito .contenido-modal .detalle #subtotal-carrito, .carrito .contenido-modal .detalle #descuento-carrito, .carrito .contenido-modal .detalle #envio-carrito {
+  font-size: 0.9rem;
+}
+
+.carrito .contenido-modal .detalle #descuento-carrito, .carrito .contenido-modal .detalle .cupon {
+  color: #30343F;
+}
+
+@media only screen and (max-width: 600px) {
+  .carrito {
+    width: 90%;
+  }
+}
+
+.catalogo .heading-catalogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.catalogo .heading-catalogo h2 {
+  margin: 0;
+}
+
+.catalogo .heading-catalogo .filtros label {
+  margin-left: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .catalogo .heading-catalogo {
+    display: unset;
+  }
+  .catalogo .heading-catalogo .filtros {
+    margin-bottom: 1rem;
+  }
+}
+
+.catalogo #catalogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.catalogo #catalogo .producto {
+  width: 20%;
+  margin-bottom: 0.5rem;
+  background-color: #fff;
+  border: 1px solid rgba(48, 52, 64, 0.18);
+  margin-right: 5%;
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.catalogo #catalogo .producto img {
+  width: 100%;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.catalogo #catalogo .producto .datos-producto {
+  padding: 0.5rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.catalogo #catalogo .producto .datos-producto .nombre-producto {
+  text-transform: capitalize;
+}
+
+.catalogo #catalogo .producto .datos-producto .btn-agregar, .catalogo #catalogo .producto .datos-producto .cant-producto {
+  font-size: 85%;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.catalogo #catalogo .producto .datos-producto .cant-producto .cant-num {
+  font-weight: 700;
+  -webkit-text-decoration: 2px underline #BA3365;
+          text-decoration: 2px underline #BA3365;
+}
+
+.catalogo #catalogo .producto .datos-producto .cant-producto .btn-menos {
+  width: 1.5rem;
+  padding: 0.3rem 0.25rem 0.25rem 0.4rem;
+  font-size: 85%;
+  border-bottom-left-radius: 45px;
+  border-top-left-radius: 45px;
+}
+
+.catalogo #catalogo .producto .datos-producto .cant-producto .btn-mas {
+  width: 1.5rem;
+  padding: 0.3rem 0.5rem 0.25rem 0.25rem;
+  font-size: 85%;
+  border-bottom-right-radius: 45px;
+  border-top-right-radius: 45px;
+}
+
+@media only screen and (max-width: 900px) {
+  .catalogo #catalogo .producto {
+    width: 30%;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    border: 1px solid rgba(48, 52, 64, 0.18);
+    margin-right: 3%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .catalogo #catalogo {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .catalogo #catalogo .producto {
+    width: 49%;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    border: 1px solid rgba(48, 52, 64, 0.18);
+    margin-right: 0;
+  }
+}
+
+#modal-img-producto {
+  background-color: rgba(28, 33, 34, 0.9);
+  position: fixed;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal-img-producto img {
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}

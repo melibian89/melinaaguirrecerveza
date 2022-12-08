@@ -1,0 +1,156 @@
+// ESTILOS DEL CARRITO DE COMPRAS
+.burbuja{
+    // BURBUJAS DE CARRITO Y DE CIERRE DEL CARRITO
+    padding: $espacioParrafos;
+    border-radius: 50px;
+    z-index: 1;
+    @include fondoGlassmorph();
+    &.abrir-carrito{
+        position: fixed;
+        bottom: 1rem;
+        right: 0.4rem;
+        font-size: $sizeLogo;
+    }
+    &.cerrar-carrito{
+        right: 5%;
+        font-size: 1rem;
+    }
+}
+// INDICADOR DE CANTIDAD DE PRODUCTOS EN EL CARRITO
+.burbuja-cant{
+    display: none;
+    align-items: center;
+
+    position: fixed;
+    bottom: 3rem;
+    right: 0.4rem;
+
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: $colorPrincipal;
+
+    color: $colorBaseBlanco;
+    font-size: 0.8rem;
+
+    cursor: pointer;
+    z-index: 2;
+    #cant-total-productos{
+        margin: auto;
+    }
+}
+
+.carrito{
+    // ESTRUCTURA GENERAL DEL CARRITO
+    max-height: 65vh;
+    width: 65%;
+    max-width: 800px;
+    position: fixed;
+    bottom: 0.75rem;
+    right: 5%;
+    overflow: auto;
+    display: none;
+    @include fondoGlassmorph();
+    .contenido-modal{
+        // ELEMENTOS DEL CARRITO
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: $espacioParrafos;
+        .cerrar-carrito{
+            position: fixed;
+        }
+        .producto-carrito{
+            // ESTILOS DE LOS PRODUCTOS
+            @include card(100%);
+            display: flex;
+            align-items: center;
+            img{
+                width: 100px;
+            }
+            .datos{
+                width: 100%;
+                display: grid;
+                gap: $espacioParrafos;
+                grid-template-columns: 1fr 0.5fr 1fr 0.5fr;
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-areas: 
+                "nombre nombre nombre nombre"
+                "precio cant sub eliminar";
+
+                .nombre{
+                    grid-area: nombre;
+                    text-transform: capitalize;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    padding-left: $espacioParrafos;
+                }
+                .precio{
+                    grid-area: precio;
+                    padding-left: $espacioParrafos;
+                }
+                .cantidades, .subtotal-producto, .eliminar{
+                    margin: auto;
+                }
+                .cantidades{
+                    grid-area: cant;
+                }
+                .subtotal-producto{
+                    grid-area: sub;
+                }
+                .eliminar{
+                    grid-area: eliminar;
+                }
+            }
+            @media only screen and (max-width: 600px){
+                img{
+                    display: none;
+                }
+                .datos{
+                    gap: 0;
+                }
+            }
+        }
+        .envio{
+            padding: $espacioParrafos;
+            margin-top: $espacioTitulos;
+            @include fondoGlassmorph();
+            h3{
+                font-family: $fuenteTitulos;
+                font-size: 1.3rem;
+            }
+        }
+        .detalle{
+            padding: $espacioParrafos;
+            margin-top: $espacioTitulos;
+            @include fondoGlassmorph();
+            h3{
+                font-family: $fuenteTitulos;
+                font-size: 1.3rem;
+            }
+            #pagar-carrito{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                padding: $espacioParrafosReducido;
+                margin-bottom: $espacioParrafos;
+            }
+            #subtotal-carrito, #total-carrito, #descuento-carrito, #envio-carrito{
+                margin-bottom: $espacioParrafosReducido;
+            }
+            #total-carrito{
+                font-size: 1.1rem;
+            }
+            #subtotal-carrito, #descuento-carrito, #envio-carrito{
+                font-size: 0.9rem;
+            }
+            #descuento-carrito, .cupon{
+                color: $colorBaseGris;
+            }
+        }
+    }
+    @media only screen and (max-width: 600px){
+        width: 90%;
+    }
+}
