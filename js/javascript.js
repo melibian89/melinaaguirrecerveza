@@ -6,6 +6,15 @@ import * as Maf from './maf.js'
 // Lista de productos
 let productos = []
 let productosFiltrado = []
+//pedir la confirmacion de edad
+
+var warning = 'Eres mayor de 18 años?';
+if (confirm(warning)) {
+    console.log ('Bienvenido');
+}
+else {
+    console.error ('Nopuedes ingresar solo es para mayores de 18 años');
+}
 
 // Obtencion de los productos de la base de datos
 const URL = './productos/db-productos.json'
