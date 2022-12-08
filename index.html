@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEBIDASDOM</title>s
+    <script src="https://kit.fontawesome.com/965dd3e5aa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Estilos/estilos.css">
+    <script  src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./media/imageniconobebida.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./media/imageniconobebida.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./media/imageniconobebida.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <a href="#menu" id="open-nav"><i class="fas fa-bars "></i></a>
+            <h1 class="logo"><a href="#"><img src="./media/Logo empresa.jpg" class="img-logo" alt="bebidas"></a></h1>
+            <nav class="nav" id="menu">
+                <a href="#" id="close-nav"><i class="fas fa-times"></i></a>
+                <ul class="nav-list">
+                    <li class="nav-link"><a id="nav-link-nosotros" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-link"><a id="nav-link-retiro" href="#retiro">Retiro</a></li>
+                    <li class="nav-link"><a id="nav-link-productos" href="#productos">Productos</a></li>
+                </ul>
+                <div>
+                    <ul class="lista-contacto">
+                        <h2>Contacto</h2>
+                        <li class="item-contacto">113424333</li>
+                        <li class="item-contacto">Av mitre 6200 , Wilde</li>
+                        <li class="item-contacto">hola@bebidasdom.com</li>
+                    </ul>
+                    <ul class="redes">
+                        <li class="instagram"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    </ul>
+                </div>
+                
+            </nav>
+        </div>
+    </header>
+    <section class="contenedor nosotros">
+        <img src="./media/tomandocerveza.jpg.crdownload" alt="Tenemos todos los productos que necesitas">
+        <h2 id="nosotros">Nosotros</h2>
+        <p>Tenemos todo para tus fiestas</p>
+      </section>
+
+    <section class="contenedor retiro">
+        <h2 id="retiro">Como retirar mi compra</h2>
+        <ul>
+            <li class="detalle-retiro">En <strong>Avellaneda</strong> el envio a domicilio es <strong>100% Gratuito</strong></li>
+            <li class="detalle-retiro">Si vivis en Avellaneda y tu compra supera los $5000 el envio corre por nuestra cuenta <strong>¡No pagas nada! ;)</strong></li>
+            <li class="detalle-retiro">En caso de que quieras retirar en nuestro local, puedes encontrarnos en: Las flores y mitre, WILDE </li>
+        </ul>
+    </section>
+    
+    <section class="contenedor catalogo">
+        <div class="heading-catalogo">
+            <h2 id="productos">Nuestros productos</h2>
+            <div class="filtros">
+                <label for="filtro-tipo">Tipo: </label>
+                <select id="filtro-tipo"></select>
+        
+            </div>
+        </div>
+        <ul id="catalogo"></ul>
+    </section>
+    <div id="modal-img-producto"></div>
+
+    <div class="burbuja-cant"><span id="cant-total-productos">0</span></div>
+    <button class="burbuja abrir-carrito"><i class="fas fa-shopping-cart"></i></button>
+    <section class="carrito" id="modal-carrito">
+        <div class="contenido-modal">
+            <button class="burbuja cerrar-carrito"><i class="fas fa-times"></i></button>
+            <h2>Carrito</h2>
+            <ul id="carrito"></ul>
+            <button class="button" id="vaciar">Vaciar carrito</button>
+            <div class="envio">
+                <h3>Envio</h3>
+                <div>
+                    <input name="envio" type="radio" id="envio-local" class="tipo-envio" value="local">
+                    <label for="envio-local">Retiro en el local <strong>SIN ENVIO</strong></label>
+                </div>
+                <div>
+                    <input name="envio" type="radio" id="envio-caba" class="tipo-envio" value="caba">
+                    <label for="envio-caba">Envío gratuio a <strong>CABA</strong></label>
+                </div>
+                <div>
+                    <input name="envio" type="radio" id="envio-interior" class="tipo-envio" value="interior">
+                    <label for="envio-interior">Envío a domicilio a cualquier localidad del <strong>Conourbano</strong></label>
+                </div>
+            </div>
+            <div class="detalle">
+                <h3>Detalle de tu carrito</h3>
+                <ul id="totales-carrito">
+                    <li id="subtotal-carrito">Subtotal: $<span id="subtotal"></span></li>
+                    <li id="descuento-carrito"><em>Descuento: -$<span id="descuento"></span></em></li>
+                    <li id="envio-carrito">Envío: +$<span id="envio"></span></li>
+                    <li id="total-carrito"><strong>Total: $<span id="total"></span></strong></li>
+                </ul>
+                <button class="button button-principal" id="pagar-carrito">Pagar</button>
+                <label class="cupon" for="input-cupon">¿Tenés un cupón de descuento?</label>
+                <input id="input-cupon" type="text">
+                <button class="button" id="btn-validar-cupon">Validar Cupón</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="contenedor informacion">
+            <div class="contacto">
+                <a href="#" class="logo"><img src="./media/Logo empresa.jpg " class="img-logo" alt="bebida"></a>
+                <ul class="lista-contacto">
+                    <h2>Contacto</h2>
+                    <li class="item-contacto">113424333</li>
+                    <li class="item-contacto">Av mitre 6260, Wilde</li>
+                    <li class="item-contacto">hola@bebidasdom.com</li>
+                </ul>
+            </div>
+            <ul class="redes">
+                <li class="instagram"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            </ul>
+        </div>
+        <p class="contenedor aclaracion"><em>Todos los derechos estan reservados </em></p>
+        </footer>
+    <script type="module" src="./js/javascript.js"></script>
+</body>
+</html>
