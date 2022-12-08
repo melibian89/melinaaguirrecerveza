@@ -1,4 +1,4 @@
-import * as CalcYVal from './calculosYValidaciones'
+import * as CalcYVal from './calculosYValidaciones.js'
 import * as Productos from './productos.js'
 import * as Carrito from './carrito.js'
 import * as Maf from './maf.js'
@@ -20,12 +20,12 @@ $( document ).ready(() => {
             }
             productosFiltrado = productos
 
-            let colores = []
-            let sexos = []
+            let desc = []
+            let tipo = []
 
             for (let i = 0 ; i < productosFiltrado.length; i++){
                
-                Maf.agregarALista(tipo, productosFiltrado[i].tipo)
+                Maf.agregarALista(desc, productosFiltrado[i].tipo)
             }
 
             Maf.mostrarFiltro(tipo, 'filtro-tipo')
@@ -40,6 +40,48 @@ $( document ).ready(() => {
     })
 })
 
+// Funciones para realizar calculos de totales, descuentos y validaciones
+export function calcularSubtotalProducto(producto){
+    producto.subtotal = producto.cant * producto.precio
+}
+
+export function calcularSubtotal(carrito){
+    let sub = 0
+    for (let i = 0; i < carrito.length; i++){
+        sub += carrito[i].subtotal
+    }
+    return sub
+}
+
+export function calcularDescuento(subtotal){
+    return subtotal * 0.1
+}
+
+export function validarCupon(cupon, cuponAplicado){
+    if (cupon.toUpperCase() === 'D3SAFIO10%' && !cuponAplicado){
+        cuponAplicado = true
+    } else {
+        alert ('No se puede aplicar el cupón ingresado')
+    }
+    return cuponAplicado
+}
+
+export function validarEnvioGratis(subtotal, montoGratis, CABA){
+    let envio = 0
+    if(subtotal >= montoGratis || CABA){
+        envio = 0
+    }
+    else{
+        envio = 500
+    }
+    return envio
+}
+
+export function calcularTotal(descuento, subtotal, envio){
+    let total = 0
+    total = subtotal - descuento + envio
+    return total
+}
 
 
 // Inicializacion de variables, constantes y listas necesarias
@@ -87,7 +129,7 @@ function actualizarCarrito(){
             `<li class="producto-carrito" id="${carrito[i].id}">
             <img src="media/img-productos/img-producto${carrito[i].id}.jpg" alt="${carrito[i].nombre} ${carrito[i].tipo}, color ${carrito[i].desc}">
                 <ul class="datos">
-                    <li class="nombre">${carrito[i].nombre} | ${carrito[i].color} | ${carrito[i].sexo}</li>
+                    <li class="nombre">${carrito[i].nombre} | ${carrito[i].desc} | ${carrito[i].tipo}</li>
                     <li class="precio">$${carrito[i].precio}</li>
                     <li class="cantidades">x${carrito[i].cant}</li>
                     <li class="subtotal-producto">Subtotal: ${carrito[i].subtotal}</li>
